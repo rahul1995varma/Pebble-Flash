@@ -1,6 +1,8 @@
 #include <pebble.h>
 
-#define NUM_QUESTIONS 5
+/**************************************  S T E P - 1  ***************************************/
+/*******CHANGE THE NUMBER 6 THE BELOW LINE WITH NUMBER OF QUESTIONS YOU WANTED TO ENTER******/
+#define NUM_QUESTIONS 6
 
 static Window *s_main_window;
 static TextLayer *s_question_layer, *s_prompt_layer;
@@ -8,20 +10,26 @@ static TextLayer *s_question_layer, *s_prompt_layer;
 static DictationSession *s_dictation_session;
 static char s_last_text[256];
 
-static char s_questions[5][64] = {
-  "Which animal has a long trunk?",
-  "What color is the sky?",
-  "Which city is the capital of the UK?",
-  "Who was the first man on the Moon?",
-  "In which state is Silicon Valley?"
+/************************************   S T E P - 2    **************************************/
+/***ENTER YOUR QUESTIONS HERE(MAKE SURE TO ENTER THEM IN BETWEEN DOUBLE QUOTES AND SEPERATE QUESTIONS WITH A COMMA )*****/
+static char s_questions[NUM_QUESTIONS][64] = {
+  "Longest River in World?",
+  "Champions of Hockey 2016?",
+  "Silicon city of India?",
+  "R.B.I. Governor of india?",
+  "Company which took over linked in?",
+  "color of the sky?"
 };
 
-static char s_answers[5][32] = {
-  "lephant",  // E/elephant
-  "lue",      // Blue/blue
-  "London",
-  "Armstrong",
-  "California"
+/**********************************    S T E P - 3   *****************/
+/*ENTER YOUR ANSWERS HERE(MAKE SURE TO ENTER THEM IN BETWEEN DOUBLE QUOTES AND SEPERATE ANSWERS WITH A COMMA)****/
+static char s_answers[NUM_QUESTIONS][32] = {
+  "Amazon",  
+  "Australia",     
+  "Bangalore",
+  "Rajan",
+  "Microsoft",
+  "Blue"
 };
 
 static int s_current_question, s_correct_answers;
@@ -53,9 +61,12 @@ static void check_answer(char *answer) {
 
   correct ? vibes_double_pulse() : vibes_long_pulse();
   text_layer_set_text(s_question_layer, correct ? "Correct!" : "Wrong!");
+  
+  //text_layer_set_text(s_prompt_layer, s_correct_answers );
   text_layer_set_text(s_prompt_layer, (s_current_question == NUM_QUESTIONS - 1)
-                      ? "" : "Here comes the next question...");
+                      ? "" : s_answers[s_current_question]);
   window_set_background_color(s_main_window, correct ? GColorGreen : GColorRed);
+  
   s_correct_answers += correct ? 1 : 0;
 
   s_current_question++;
@@ -146,9 +157,14 @@ static void deinit() {
 
   window_destroy(s_main_window);
 }
-
+/********************THIS IS THE MAIN FUNCTION WHERE EXECUTION STARTS***************/
 int main() {
   init();
   app_event_loop();
   deinit();
 }
+
+
+
+
+
