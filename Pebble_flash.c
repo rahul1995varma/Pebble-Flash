@@ -1,4 +1,5 @@
 #include <pebble.h>
+
 /**************************************  S T E P - 1  ***************************************/
 /*******CHANGE THE NUMBER 6 THE BELOW LINE WITH NUMBER OF QUESTIONS YOU WANTED TO ENTER******/
 #define NUM_QUESTIONS 6
@@ -8,25 +9,25 @@ static TextLayer *s_question_layer, *s_prompt_layer;
 
 static DictationSession *s_dictation_session;
 static char s_last_text[256];
-/************************************   S T E P - 2    **************************************/
+
+/************************************   S T E P - 2    ******************************************************************/
 /***ENTER YOUR QUESTIONS HERE(MAKE SURE TO ENTER THEM IN BETWEEN DOUBLE QUOTES AND SEPERATE QUESTIONS WITH A COMMA )*****/
 static char s_questions[NUM_QUESTIONS][64] = {
   "Longest River in World?",
-  "Champions of Hockey 2016?",
+  "Champions of FIFA Football 2014 ?",
   "Silicon city of India?",
-  "R.B.I. Governor of india?",
-  "Company which took over linked in?",
-  "color of the sky?"
+  "Most Populous City of the World",
+  "Company that acquired LinkedIn?",
 };
-/**********************************    S T E P - 3   *****************/
+
+/**********************************    S T E P - 3   ************************************************************/
 /*ENTER YOUR ANSWERS HERE(MAKE SURE TO ENTER THEM IN BETWEEN DOUBLE QUOTES AND SEPERATE ANSWERS WITH A COMMA)****/
 static char s_answers[NUM_QUESTIONS][32] = {
   "Amazon",  
-  "Australia",     
+  "Germany",     
   "Bangalore",
-  "Rajan",
+  "Tokyo",
   "Microsoft",
-  "Blue"
 };
 
 static int s_current_question, s_correct_answers;
