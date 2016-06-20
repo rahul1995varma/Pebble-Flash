@@ -1,8 +1,8 @@
 #include <pebble.h>
 
 /**************************************  S T E P - 1  ***************************************/
-/*******CHANGE THE NUMBER 6 THE BELOW LINE WITH NUMBER OF QUESTIONS YOU WANTED TO ENTER******/
-#define NUM_QUESTIONS 6
+/*******CHANGE THE NUMBER 5 THE BELOW LINE WITH NUMBER OF QUESTIONS YOU WANTED TO ENTER******/
+#define NUM_QUESTIONS 5
 
 static Window *s_main_window;
 static TextLayer *s_question_layer, *s_prompt_layer;
