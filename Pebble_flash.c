@@ -1,5 +1,4 @@
 #include <pebble.h>
-
 /**************************************  S T E P - 1  ***************************************/
 /*******CHANGE THE NUMBER 6 THE BELOW LINE WITH NUMBER OF QUESTIONS YOU WANTED TO ENTER******/
 #define NUM_QUESTIONS 6
@@ -9,7 +8,6 @@ static TextLayer *s_question_layer, *s_prompt_layer;
 
 static DictationSession *s_dictation_session;
 static char s_last_text[256];
-
 /************************************   S T E P - 2    **************************************/
 /***ENTER YOUR QUESTIONS HERE(MAKE SURE TO ENTER THEM IN BETWEEN DOUBLE QUOTES AND SEPERATE QUESTIONS WITH A COMMA )*****/
 static char s_questions[NUM_QUESTIONS][64] = {
@@ -20,7 +18,6 @@ static char s_questions[NUM_QUESTIONS][64] = {
   "Company which took over linked in?",
   "color of the sky?"
 };
-
 /**********************************    S T E P - 3   *****************/
 /*ENTER YOUR ANSWERS HERE(MAKE SURE TO ENTER THEM IN BETWEEN DOUBLE QUOTES AND SEPERATE ANSWERS WITH A COMMA)****/
 static char s_answers[NUM_QUESTIONS][32] = {
